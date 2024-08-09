@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "./theme-provider";
-import Nav from "./nav";
-import Footer from "./footer";
+import Nav from "../components/nav";
+import Footer from "../components/footer";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./styles/globals.css";
-import "./styles/prism-dracula.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,13 +25,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex flex-col min-h-screen space-y-2">
+          <div className="flex flex-col min-h-screen space-y-2">
             <Nav />
-            <div id="content" className="container flex-grow pt-4">
+            <main className="container flex-grow pt-10 px-2.5 pb-6 lg:px-0">
               {children}
-            </div>
+            </main>
             <Footer />
-          </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>

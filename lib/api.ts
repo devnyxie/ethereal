@@ -1,13 +1,15 @@
 import fs from "fs";
 import { join } from "path";
+import { calculateReadTime } from "./utils";
 
 export interface PostData {
   title: string;
-  excerpt: string;
-  coverImage: string;
-  date: string;
+  excerpt: string; // ! not used currently
+  coverImage: string; // e.g. "/images/cover.jpg"
+  date: string; // e.g. "2021-08-01"
   slug: string; // route name
-  content: string;
+  readTime: string; // e.g. "5min"
+  content: string; // markdown content
 }
 
 const postsDirectory = join(process.cwd(), "_articles");
@@ -19,13 +21,6 @@ function titleToSlug(title: string) {
     .replace(/\s+/g, "-") // Replace spaces with hyphens
     .replace(/--+/g, "-") // Replace multiple hyphens with single hyphen
     .trim(); // Trim hyphens from start and end
-}
-
-function slugToTitle(slug: string) {
-  return slug
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
 }
 
 const parseFrontMatter = (
@@ -43,13 +38,18 @@ const parseFrontMatter = (
 
   const data: PostData = frontMatter.split("\n").reduce((acc, line) => {
     const [key, ...value] = line.split(":");
-    acc[key.trim() as keyof PostData] = value.join(":").trim();
+    acc[key.trim() as keyof PostData] = value
+      .join(":")
+      .trim()
+      .replace(/^"(.*)"$/, "$1");
     return acc;
   }, {} as PostData);
 
   if (!data.title || !data.date) {
     throw new Error("Title and date are required in front matter");
   }
+
+  data.readTime = calculateReadTime(bodyContent);
 
   return { data, content: bodyContent };
 };
@@ -75,6 +75,7 @@ export const getPostBySlug = (slug: string): PostData => {
 
 export const getAllPosts = (): PostData[] => {
   const fileNames = fs.readdirSync(postsDirectory);
+
   const allPosts = fileNames.map((fileName) => {
     const filePath = join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf8");
@@ -82,6 +83,8 @@ export const getAllPosts = (): PostData[] => {
     data.slug = titleToSlug(data.title);
     return data;
   });
-
+  allPosts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
   return allPosts;
 };

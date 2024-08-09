@@ -5,21 +5,21 @@ import rehypeStringify from "rehype-stringify";
 import { visit } from "unist-util-visit";
 import { Element } from "hast";
 import rehypePrism from "rehype-prism-plus";
+import rehypePrettyCode from "rehype-pretty-code";
 
 const rehypeAddStyles = () => {
-  const headings = ["h1", "h2", "h3", "h4", "h5", "h6"];
   return (tree: any) => {
     visit(tree, "element", (node: Element) => {
       if (node.tagName === "pre") {
-        if (node.properties && node.properties.class) {
-          node.properties.class += "rounded-sm border p-2 bg-black";
+        if (node.properties) {
+          const classes =
+            "relative rounded-sm border p-2 mt-2 mb-2 overflow-x-auto";
+          if (node.properties.class) {
+            node.properties.class += classes;
+          } else {
+            node.properties = { class: classes, ...node.properties };
+          }
         }
-        // }
-        //  else if (node.tagName === "p") {
-        //   node.properties = {
-        //     ...node.properties,
-        //     class: "text-base leading-relaxed mb-4",
-        //   };
       } else if (node.tagName === "ul" || node.tagName === "ol") {
         node.properties = { ...node.properties, class: "list-inside" };
       } else if (node.tagName === "blockquote") {
@@ -36,7 +36,14 @@ const parseMarkdown = async (markdownContent: string) => {
   let html = await unified()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypePrism)
+    // .use(rehypePrism)
+    .use(rehypePrettyCode, {
+      theme: {
+        dark: "aurora-x",
+        light: "one-light",
+      },
+      defaultLang: "plaintext",
+    })
     .use(rehypeAddStyles)
     .use(rehypeStringify)
     .process(markdownContent);

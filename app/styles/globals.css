@@ -31,11 +31,11 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%; /*0, 0%, 7% <- accessibility hint*/
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: var(--background); /*0, 0%, 7% <- accessibility hint*/
+    --card: var(--background);
     --card-foreground: 0 0% 98%;
-    --popover: var(--background); /*0, 0%, 7% <- accessibility hint*/
+    --popover: var(--background);
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
@@ -69,11 +69,22 @@
 @layer base {
   ul,
   ol {
-    list-style: revert;
+    list-style: revert; /* Tailwind list style reset */
   }
 }
 
+html,
+body {
+  scrollbar-gutter: stable both-edges !important; /* Chrome Scrollbar fix */
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Markdown Styling */
 .markdown {
+  /* <-- markdown text normalizing --> */
   ul,
   ol {
     margin: revert;
@@ -113,5 +124,41 @@
   h6 {
     @apply text-base;
     font-weight: 400;
+  }
+  /*<-- markdowns code highlighting -->*/
+  /* LIGHT */
+  pre {
+    background-color: var(--shiki-light-bg) !important;
+  }
+
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+  }
+
+  /* Solo <code> tags */
+  :not(pre) > code {
+    @apply px-1 py-0.5 rounded-sm border;
+  }
+
+  /* Solo <code> tags: list item case*/
+  li:has(> span > code) {
+    @apply mb-1.5;
+  }
+}
+
+/* Markdowns Dark Mode Styling */
+html.dark .markdown {
+  /*<-- markdowns code highlighting -->*/
+  /* DARK */
+  pre {
+    background-color: var(--shiki-dark-bg) !important;
+  }
+
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
   }
 }

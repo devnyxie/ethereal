@@ -8,15 +8,24 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { ChevronUpIcon } from "@radix-ui/react-icons";
 
 function ThemeChanger() {
   const { theme, setTheme } = useTheme();
+  const [isOpen, setIsOpen] = React.useState(false);
+  // className="mr-2 h-4 w-4"
   return (
     <div>
-      <DropdownMenu>
+      <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="">
+          <Button variant="outline" className="px-2">
             Theme
+            {isOpen ? (
+              <ChevronUpIcon className="ml-0.5 h-4 w-4" />
+            ) : (
+              <ChevronDownIcon className="ml-0.5 h-4 w-4" />
+            )}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-36 " side="top" align="end">

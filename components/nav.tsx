@@ -9,6 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { usePathname } from "next/navigation";
+import ThemeChanger from "../app/themeChanger";
 
 const links = [
   {
@@ -26,10 +27,10 @@ const Nav: React.FC = () => {
   const currentRoute = currentPath;
   console.log(currentRoute);
   return (
-    <nav className="p-2 border-b">
+    <nav className="p-2">
       <div className="container flex justify-between items-center">
-        <Link href="/" className="text-xl font-light">
-          devnyxie
+        <Link href="/" className="text-lg">
+          Timothee
         </Link>
         <NavigationMenu>
           <NavigationMenuList>
@@ -47,6 +48,7 @@ const Nav: React.FC = () => {
                 </NavigationMenuItem>
               </>
             ))}
+            <ThemeChanger />
           </NavigationMenuList>
         </NavigationMenu>
       </div>

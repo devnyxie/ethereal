@@ -14,7 +14,7 @@ const config = {
     container: {
       center: true,
       screens: {
-        "2xl": "1000px",
+        "2xl": "1024px",
       },
     },
     extend: {
