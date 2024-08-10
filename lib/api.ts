@@ -4,12 +4,14 @@ import { calculateReadTime } from "./utils";
 
 export interface PostData {
   title: string;
-  excerpt: string; // ! not used currently
+  excerpt: string; // [!] not used currently
   coverImage: string; // e.g. "/images/cover.jpg"
   date: string; // e.g. "2021-08-01"
   slug: string; // route name
-  readTime: string; // e.g. "5min"
+  readTime: string; // e.g. "5min" (generated in this file)
   content: string; // markdown content
+  folder?: string; // e.g. "cockpit"
+  tags?: string[]; // e.g. ["linux", "hardware", "reverse engineering"]
 }
 
 const postsDirectory = join(process.cwd(), "_articles");
@@ -38,10 +40,20 @@ const parseFrontMatter = (
 
   const data: PostData = frontMatter.split("\n").reduce((acc, line) => {
     const [key, ...value] = line.split(":");
-    acc[key.trim() as keyof PostData] = value
-      .join(":")
-      .trim()
-      .replace(/^"(.*)"$/, "$1");
+    const trimmedKey = key.trim() as keyof PostData;
+    if (trimmedKey === "tags") {
+      acc[trimmedKey] = value
+        .join(":")
+        .trim()
+        .replace(/^\[|\]$/g, "") // Remove square brackets if they exist
+        .split(",")
+        .map((tag) => tag.trim().replace(/^"(.*)"$/, "$1")); // Remove quotes if they exist
+    } else {
+      acc[trimmedKey] = value
+        .join(":")
+        .trim()
+        .replace(/^"(.*)"$/, "$1");
+    }
     return acc;
   }, {} as PostData);
 
@@ -83,8 +95,29 @@ export const getAllPosts = (): PostData[] => {
     data.slug = titleToSlug(data.title);
     return data;
   });
+
   allPosts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   return allPosts;
 };
+
+export function getAllTags() {
+  const allPosts = getAllPosts();
+  const tags = new Set<string>();
+  allPosts.forEach((post) => {
+    post.tags?.forEach((tag) => {
+      tags.add(tag);
+    });
+  });
+  return Array.from(tags);
+}
+
+export function getAllFolders() {
+  const allPosts = getAllPosts();
+  const folders = new Set<string>();
+  allPosts.forEach((post) => {
+    folders.add(post.folder || "");
+  });
+  return Array.from(folders);
+}

@@ -10,6 +10,9 @@ import {
 } from "@/components/ui/navigation-menu";
 import { usePathname } from "next/navigation";
 import ThemeChanger from "../app/themeChanger";
+import Image from "next/image";
+import icon from "@/public/shard.svg";
+import Logo from "./logo";
 
 const links = [
   {
@@ -29,24 +32,24 @@ const Nav: React.FC = () => {
   return (
     <nav className="p-2">
       <div className="container flex justify-between items-center">
-        <Link href="/" className="text-lg">
-          Timothee
+        <Link href="/" className="flex items-center space-x-2">
+          {/* <Image src={icon} alt="logo" width={25} height={25} /> */}
+          <Logo />
+          <span className="text-lg">Shard</span>
         </Link>
         <NavigationMenu>
           <NavigationMenuList>
-            {links.map((link) => (
-              <>
-                <NavigationMenuItem>
-                  <Link href={link.href} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                      active={currentRoute === link.href}
-                    >
-                      {link.title}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              </>
+            {links.map((link, index) => (
+              <NavigationMenuItem key={index}>
+                <Link href={link.href} legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} duration-200`}
+                    active={currentRoute === link.href}
+                  >
+                    {link.title}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
             ))}
             <ThemeChanger />
           </NavigationMenuList>
