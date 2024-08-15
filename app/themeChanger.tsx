@@ -14,7 +14,7 @@ import { ChevronUpIcon } from "@radix-ui/react-icons";
 function ThemeChanger() {
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = React.useState(false);
-  // className="mr-2 h-4 w-4"
+
   return (
     <div>
       <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>

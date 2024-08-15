@@ -22,7 +22,7 @@ const ArticleListItem = ({
           <h2 className="opacity-25 text-2xl font-normal mb-1 mt-7">{year}</h2>
         </>
       )}
-      <div className="transition-opacity  mb-3">
+      <div className="transition-opacity mb-3">
         <Link
           href={`/articles/${article.slug}`}
           key={article.slug}
@@ -52,10 +52,10 @@ function page() {
   return (
     <div className="flex flex-col w-full">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-medium mb-4">Articles</h1>
+        <h1 className="text-3xl font-medium">Articles</h1>
         <div className="flex space-x-2">
           <Link
-            href="/tags"
+            href="/articles/tags"
             passHref
             className="flex items-center space-x-1 text-sm"
           >
@@ -65,7 +65,7 @@ function page() {
             </Button>
           </Link>
           <Link
-            href="/folders"
+            href="articles/folders"
             passHref
             className="flex items-center space-x-1 text-sm"
           >

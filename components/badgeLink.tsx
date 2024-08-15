@@ -5,12 +5,11 @@ import { Badge } from "./ui/badge";
 interface BadgeLinkProps {
   text: string;
   href: string;
-  key?: number;
 }
 
-const BadgeLink: React.FC<BadgeLinkProps> = ({ text, href, key }) => {
+const BadgeLink: React.FC<BadgeLinkProps> = ({ text, href }) => {
   return (
-    <Link key={key} href={href}>
+    <Link href={href}>
       <Badge variant="outline" className="px-2 opacity-80 hover:opacity-100">
         {text}
       </Badge>

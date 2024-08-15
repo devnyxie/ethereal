@@ -14,8 +14,8 @@ const parseMarkdown = async (markdownContent: string) => {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypePrettyCode, {
       theme: {
-        dark: "aurora-x",
-        light: "one-light",
+        dark: "github-dark",
+        light: "github-light",
       },
       defaultLang: "plaintext",
     })

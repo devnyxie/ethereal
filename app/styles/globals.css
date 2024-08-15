@@ -73,13 +73,17 @@
   }
 }
 
-html,
-body {
-  scrollbar-gutter: stable both-edges !important; /* Chrome Scrollbar fix */
-}
-
 body {
   @apply antialiased;
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }
 
 /* Markdown Styling */
@@ -149,7 +153,8 @@ body {
 }
 
 /* Markdowns Dark Mode Styling */
-html.dark .markdown {
+html.dark,
+html.dark-theme .markdown {
   /*<-- markdowns code highlighting -->*/
   /* DARK */
   pre {
@@ -160,5 +165,37 @@ html.dark .markdown {
   code[data-theme*=" "] span {
     color: var(--shiki-dark);
     background-color: var(--shiki-dark-bg);
+  }
+}
+
+@keyframes jump {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.down-arrow {
+  animation: jump 2s infinite;
+}
+
+.page-intro-animation {
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
