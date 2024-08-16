@@ -66,13 +66,6 @@
   }
 }
 
-@layer base {
-  ul,
-  ol {
-    list-style: revert; /* Tailwind list style reset */
-  }
-}
-
 body {
   @apply antialiased;
 }
@@ -86,13 +79,16 @@ body {
   }
 }
 
+ul:not(header ul),
+ol:not(header ol) {
+  margin: initial;
+  padding: initial;
+  @apply list-inside;
+}
+
 /* Markdown Styling */
 .markdown {
   /* <-- markdown text normalizing --> */
-  ul,
-  ol {
-    margin: revert;
-  }
 
   h1,
   h2,
@@ -104,31 +100,18 @@ body {
     @apply border-b;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
-  }
-  h1 {
-    @apply text-3xl;
-    font-weight: 600;
-  }
-  h2 {
-    @apply text-2xl;
-    font-weight: 600;
-  }
-  h3 {
-    @apply text-2xl;
     font-weight: 500;
   }
-  h4 {
-    @apply text-lg;
-    font-weight: 500;
+
+  ul,
+  ol {
+    list-style: revert; /* Tailwind list style reset */
   }
-  h5 {
-    @apply text-base;
-    font-weight: 400;
+
+  p {
+    @apply mb-2;
   }
-  h6 {
-    @apply text-base;
-    font-weight: 400;
-  }
+
   /*<-- markdowns code highlighting -->*/
   /* LIGHT */
   pre {
@@ -150,6 +133,36 @@ body {
   li:has(> span > code) {
     @apply mb-1.5;
   }
+
+  /* Table Styling */
+  table {
+    @apply border-collapse border mt-2 mb-2;
+  }
+
+  table thead th {
+    @apply border py-2 px-4 text-left;
+  }
+
+  table tbody td {
+    @apply border py-2 px-4;
+  }
+
+  table tr:last-child td {
+    @apply border;
+  }
+}
+
+h1 {
+  @apply text-3xl;
+}
+h2 {
+  @apply text-2xl;
+}
+h3 {
+  @apply text-xl;
+}
+h4 {
+  @apply text-lg;
 }
 
 /* Markdowns Dark Mode Styling */

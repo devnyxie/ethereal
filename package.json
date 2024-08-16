@@ -20,11 +20,14 @@
     "next": "14.2.5",
     "next-themes": "^0.3.0",
     "react": "^18",
+    "react-activity-calendar": "^2.3.5",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "rehype": "^13.0.1",
     "rehype-pretty-code": "^0.13.2",
-    "remark-breaks": "^4.0.0"
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-toc": "^9.0.0"
   },
   "devDependencies": {
     "@types/hast": "^3.0.4",

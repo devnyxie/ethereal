@@ -28,9 +28,9 @@ export default async function Article({ params }: any) {
 
   const content = await markdownToHtml(post.content);
   return (
-    <article className="page-intro-animation">
+    <article className="page-intro-animation flex flex-col">
       <div className="mb-4">
-        <h1 className="text-3xl font-semibold">{post.title}</h1>
+        <h1>{post.title}</h1>
         <p className="opacity-65">{longDate(post.date)}</p>
         <PostTags tags={post.tags || []} />
         {post.folder && (
@@ -44,6 +44,7 @@ export default async function Article({ params }: any) {
           </div>
         )}
       </div>
+
       <div className="markdown" dangerouslySetInnerHTML={{ __html: content }} />
     </article>
   );

@@ -6,15 +6,17 @@ import rehypeStringify from "rehype-stringify";
 import { visit } from "unist-util-visit";
 import { Element } from "hast";
 import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 
 const parseMarkdown = async (markdownContent: string) => {
   let html = await unified()
     .use(parse)
     .use(breaks)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(remarkGfm)
     .use(rehypePrettyCode, {
       theme: {
-        dark: "github-dark",
+        dark: "houston",
         light: "github-light",
       },
       defaultLang: "plaintext",
@@ -35,7 +37,7 @@ const rehypeAddStyles = () => {
       if (node.tagName === "pre") {
         if (node.properties) {
           const classes =
-            "relative rounded-sm border p-2 mt-2 mb-2 overflow-x-auto";
+            "relative rounded-sm border p-1.5 mt-2 mb-2 overflow-x-auto text-[14px] max-h-[400px] overflow-y-auto";
           if (node.properties.class) {
             node.properties.class += classes;
           } else {

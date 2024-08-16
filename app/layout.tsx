@@ -6,7 +6,6 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./styles/globals.css";
 import "./styles/scrollbar.css";
-import { TooltipProvider } from "@radix-ui/react-tooltip";
 import Header from "@/components/header";
 
 export const metadata: Metadata = {
@@ -25,14 +24,14 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       // style={{ paddingLeft: "calc(100vw - 100%)" }}
     >
-      <body>
+      <body className="">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="bg-background relative flex flex-col min-h-screen pt-[4.5rem]">
+          <div className="relative flex flex-col min-h-screen pt-[4.5rem]">
             <Nav />
             {children}
             <Footer />

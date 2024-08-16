@@ -69,16 +69,16 @@ const config = {
         },
         blob: {
           "0%": {
-            transform: "translate(0px, 0px) scale(1)",
+            transform: "scale(1)",
           },
           "33%": {
-            transform: "translate(10px, -10px) scale(1.1)",
+            transform: "scale(1.1)",
           },
           "66%": {
-            transform: "translate(-15px, 15px) scale(0.9)",
+            transform: "scale(0.90)",
           },
           "100%": {
-            transform: "tranlate(0px, 0px) scale(1)",
+            transform: "scale(1)",
           },
         },
       },

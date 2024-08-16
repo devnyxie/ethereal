@@ -4,10 +4,12 @@ import * as React from "react";
 export default function About() {
   return (
     <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-      adipisci unde illum, nulla incidunt quam soluta praesentium voluptatem
-      distinctio, ad ut. Id quidem quo saepe, doloribus laboriosam dolorum
-      minima quasi.
+      <h1 className="mb-2">About</h1>
+      <p>
+        Enthusiastic Software Developer with a passion for open-source. I
+        dedicate my free time in learning and contributing to well-known
+        open-source projects like Next.js and Material UI.
+      </p>
       <div className="mt-8 mb-8 flex justify-center">
         <GithubCalendar />
       </div>
