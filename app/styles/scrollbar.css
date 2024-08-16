@@ -35,10 +35,10 @@ html.dark .background-pattern {
       rgba(255, 255, 255, 0) 100%,
       /* white 85%, */ hsl(var(--background)) 10rem
     ),
-    linear-gradient(rgb(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(rgb(255, 255, 255, 0.008) 1px, transparent 1px),
     linear-gradient(
       to right,
-      rgb(255, 255, 255, 0.01) 1px,
+      rgb(255, 255, 255, 0.008) 1px,
       hsl(var(--background)) 1px
     );
   background-size: 100% 100%, 100px 100px, 100px 100px;
