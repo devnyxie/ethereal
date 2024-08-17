@@ -1,5 +1,5 @@
 ---
-title: "Optimizing Linux System Performance for Hardware Acceleration"
+title: "Article [old] [short]"
 date: "2023-07-21"
 folder: "cockpit"
 tags: "linux", "hardware", "performance", "acceleration"

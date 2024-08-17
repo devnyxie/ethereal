@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "./theme-provider";
-import Nav from "../components/nav";
-import Footer from "../components/footer";
+import { ThemeProvider } from "../components/theme/theme-provider";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./styles/globals.css";
 import "./styles/scrollbar.css";
-import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,18 +20,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable} fix`}
       // style={{ paddingLeft: "calc(100vw - 100%)" }}
     >
-      <body className="">
+      <body className="noisy-div">
+        {/* w-[100vw] flex justify-center items-center */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex flex-col min-h-screen pt-[4.5rem]">
-            <Nav />
+          <div className="relative flex flex-col min-h-screen pt-[4.5rem] ">
+            <Header />
             {children}
             <Footer />
           </div>

@@ -11,7 +11,7 @@ const SplitterArticleListItem = () => (
   </div>
 );
 
-const ArticleListItem = ({ article }: { article: PostData }) => (
+export const ArticleListItem = ({ article }: { article: PostData }) => (
   <div className="transition-opacity mb-3">
     <div className="md:flex md:flex-wrap md:justify-between md:items-center">
       <Link

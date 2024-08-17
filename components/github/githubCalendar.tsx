@@ -2,7 +2,6 @@
 
 import { useTheme } from "next-themes";
 import React from "react";
-import ActivityCalendar from "react-activity-calendar";
 import colors from "tailwindcss/colors";
 import GithubCalendar_inner from "./githubCalendar_inner";
 

@@ -14,7 +14,7 @@ const ThemeSwitcher: React.FC = () => {
   };
 
   return (
-    <div className="flex rounded-full border p-1" role="radiogroup">
+    <div className="flex rounded-full border p-1 w-max" role="radiogroup">
       {(["light", "system", "dark"] as Theme[]).map((thememap) => (
         <Button
           size="sm"

@@ -375,12 +375,20 @@ const data = [
 ];
 
 function GithubCalendar_inner({ resolvedTheme }: any) {
+  // under "md" breakpoint, the calendar will display 6 months instead of 12.
+  // data will be fetched in separate server component and passed as serialized prop.
   return (
-    <>
+    <div className="overflow-x-auto p-4">
       <ActivityCalendar
         data={data}
         theme={{
-          light: ["hsl(0, 0%, 92%)", colors.green[600]],
+          light: [
+            "hsl(0, 0%, 92%)",
+            colors.green[400],
+            colors.green[500],
+            colors.green[600],
+            colors.green[700],
+          ],
           dark: [
             "#333",
             colors.green[800],
@@ -391,7 +399,7 @@ function GithubCalendar_inner({ resolvedTheme }: any) {
         }}
         colorScheme={resolvedTheme}
       />
-    </>
+    </div>
   );
 }
 
