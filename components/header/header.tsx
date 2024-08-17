@@ -89,7 +89,7 @@ const Header: React.FC = () => {
           <div className="block md:hidden">
             <Drawer>
               <DrawerTrigger asChild>
-                <Button size="icon" variant="outline">
+                <Button size="icon" variant="outline" className="rounded-full">
                   <HamburgerMenuIcon className="w-5 h-5" />
                 </Button>
               </DrawerTrigger>

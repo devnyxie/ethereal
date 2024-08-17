@@ -6,7 +6,7 @@ import AnimatedBackground from "@/components/animated-bg/AnimatedBackground";
 import { cn } from "@/lib/utils";
 import LatestArticles from "@/components/latest-articles/LatestArticles";
 
-const CardBody = () => (
+const CardBioBody = () => (
   <div className="flex justify-between items-center z-[1] p-10">
     <div className="w-full flex flex-col md:flex-row items-center justify-between space-y-20 md:space-y-0 md:space-x-10">
       <div>
@@ -35,8 +35,7 @@ const CardBody = () => (
     </div>
   </div>
 );
-//======================================
-export const SimpleCard_V3 = () => {
+const CardBio = () => {
   const Icon = ({ className, ...rest }: any) => {
     return (
       <svg
@@ -61,7 +60,7 @@ export const SimpleCard_V3 = () => {
         <Icon className="-top-3 -right-3" />
         <Icon className="-bottom-3 -left-3" />
         <Icon className="-bottom-3 -right-3" />
-        <CardBody />
+        <CardBioBody />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { getAllPosts, PostData } from "@/lib/api";
 import Link from "next/link";
 import { shortDate } from "@/lib/utils";
 import { LuCalendar, LuClock } from "react-icons/lu";
-import { ArticleListItem } from "@/app/articles/page";
+import ArticleListItem from "../articles/ArticleListItem";
 
 const LatestArticles: React.FC = () => {
   const allArticles = getAllPosts();
