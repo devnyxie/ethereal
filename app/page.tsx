@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <>
       {/* Why 6.5rem? It's because the height of the navbar is 4.5rem and the padding top of the template is 2rem. */}
-      <div className="w-full relative flex flex-col items-center justify-center h-dvh mt-[-6.5rem]">
+      <div className="w-full relative flex flex-col items-center justify-center lg:h-dvh lg:mt-[-6.5rem]">
         <AnimatedBackground />
         {/* <SimpleCard_V3 /> */}
         <div className="flex justify-between items-center z-[1] p-10">
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className="absolute bottom-0 left-1/2 opacity-50"
+          className="absolute bottom-0 left-1/2 opacity-50 hidden lg:block"
           style={{ transform: "translate(-50%, -50%)" }}
         >
           <ChevronDownIcon className="down-arrow" height={25} width={25} />
