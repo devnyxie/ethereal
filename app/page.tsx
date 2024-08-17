@@ -70,11 +70,11 @@ export default function Home() {
   return (
     <>
       {/* Why 6.5rem? It's because the height of the navbar is 4.5rem and the padding top of the template is 2rem. */}
-      <div className="w-full relative flex flex-col items-center justify-center lg:h-dvh lg:mt-[-6.5rem]">
+      <div className="w-full relative flex flex-col items-center justify-center py-[5rem] lg:py-0 lg:h-dvh lg:mt-[-6.5rem]">
         <AnimatedBackground />
         {/* <SimpleCard_V3 /> */}
-        <div className="flex justify-between items-center z-[1] p-10">
-          <div className="w-full flex flex-col md:flex-row items-center justify-between space-y-20 md:space-y-0 md:space-x-10">
+        <div className="flex justify-between items-center z-[1]">
+          <div className="w-full flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-10">
             <div>
               <div className="text-xl md:text-2xl">
                 {"Hey! My name is"}
@@ -110,7 +110,7 @@ export default function Home() {
           <ChevronDownIcon className="down-arrow" height={25} width={25} />
         </div>
       </div>
-      <div className="py-20 block w-full mx-auto md:max-w-[800px]">
+      <div className="py-10 lg:py-20 block w-full mx-auto md:max-w-[800px]">
         <LatestArticles />
       </div>
     </>
