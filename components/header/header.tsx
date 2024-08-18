@@ -116,7 +116,7 @@ const Header: React.FC = () => {
                   <DrawerTitle>Tabs</DrawerTitle>
                   <DrawerDescription>Navigation Links</DrawerDescription>
                 </DrawerHeader>
-                <div className="py-4">
+                <div className="pb-4 pt-2 sm:px-4">
                   {links.map((link, index) => {
                     const Icon = link.icon;
                     return (
