@@ -20,13 +20,11 @@ const ThemeSwitcher: React.FC = () => {
           size="sm"
           variant="ghost"
           key={thememap}
-          aria-checked={thememap === theme}
           aria-label={`Switch to ${thememap} theme`}
           className={`
             flex items-center justify-center p-2 transition-colors rounded-full
-
+            ${theme === thememap ? "bg-accent dark:bg-accent/40" : ""}
           `}
-          data-active={thememap === theme}
           onClick={() => handleThemeChange(thememap)}
           role="radio"
           type="button"

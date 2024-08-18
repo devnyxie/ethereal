@@ -1,8 +1,5 @@
-import BadgeLink from "@/components/badgeLink";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import BadgeLink from "@/components/badge/badgeLink";
 import { getAllTags } from "@/lib/api";
-import Link from "next/link";
 import * as React from "react";
 
 export default function Tags() {

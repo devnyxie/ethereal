@@ -20,7 +20,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} fix`}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      suppressHydrationWarning
       // style={{ paddingLeft: "calc(100vw - 100%)" }}
     >
       <body className="noisy-div">

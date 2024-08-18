@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Badge } from "./ui/badge";
+import { Badge } from "../ui/badge";
 
 interface BadgeLinkProps {
   text: string;

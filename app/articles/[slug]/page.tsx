@@ -3,11 +3,8 @@ import { getAllPosts, getPostBySlug, PostData } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { longDate } from "@/lib/utils";
 import { LuFolder, LuTags } from "react-icons/lu";
-import Link from "next/link";
-import BadgeLink from "@/components/badgeLink";
-import { Button } from "@/components/ui/button";
+import BadgeLink from "@/components/badge/badgeLink";
 import PostTags from "./page_tags";
-import { Badge } from "@/components/ui/badge";
 
 export async function generateStaticParams() {
   let posts = getAllPosts();

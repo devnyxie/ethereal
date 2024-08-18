@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
     <>
       <footer className="footer relative w-full h-[4.5rem] border-t mt-20">
         <div className="footer-shadow" />
-        <div className="w-full h-full bg-background/70 backdrop-blur-[25px] transform-gpu z-40 flex items-center">
+        <div className="w-full h-full bg-background/70 backdrop-blur-[10px] transform-gpu z-40 flex items-center">
           {" "}
           <div className="container flex flex-col justify-center items-center text-sm space-y-2 z-50">
             <div className="flex flex-wrap items-center justify-center gap-4">

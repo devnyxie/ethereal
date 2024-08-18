@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import BadgeLink from "@/components/badgeLink";
+import BadgeLink from "@/components/badge/badgeLink";
 import { LuTags } from "react-icons/lu";
 
 interface PostTagsProps {
