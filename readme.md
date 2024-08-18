@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a minimalistic website template. It is designed to be simple, fast and easy to use.
+This is a minimalistic website template. It is designed to be simple, fast but also eye-catching. It is built with Next.js and Tailwind CSS. It is also optimized for SEO and accessibility.
 
 ## Features
 
