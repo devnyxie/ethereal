@@ -11,7 +11,6 @@ This is a minimalistic website template. It is designed to be simple, fast but a
 
 ## To Do
 
-- [x] Finish Mobile Navigation
 - Metadata: Add metadata to the pages, even statically generated ones.
 - Optimize Dark Mode Gradient: enable gpu acceleration, stop animating on mobile devices and decrease amount of effects (-1).
 - Generated Sitemap: Generate a sitemap for the website.

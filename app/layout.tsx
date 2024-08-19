@@ -22,10 +22,8 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable}`}
       suppressHydrationWarning
-      // style={{ paddingLeft: "calc(100vw - 100%)" }}
     >
       <body className="noisy-div">
-        {/* w-[100vw] flex justify-center items-center */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

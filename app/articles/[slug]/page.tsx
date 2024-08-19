@@ -25,7 +25,7 @@ export default async function Article({ params }: any) {
 
   const content = await markdownToHtml(post.content);
   return (
-    <article className="page-intro-animation flex flex-col">
+    <article className="flex flex-col">
       <div className="mb-4">
         <h1>{post.title}</h1>
         <p className="opacity-65">{longDate(post.date)}</p>

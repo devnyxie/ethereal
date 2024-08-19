@@ -35,9 +35,9 @@
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: var(--background);
+    --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-    --popover: var(--background);
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
@@ -212,16 +212,17 @@ html.dark-theme .markdown {
   animation: jump 2s infinite;
 }
 
-.page-intro-animation {
-  position: relative;
-  opacity: 0;
-  animation: fadeIn 0.3s forwards;
+@keyframes bg-accent {
+  0% {
+    @apply bg-transparent;
+  }
+  100% {
+    @apply bg-accent/50;
+  }
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+.animation-bg-accent {
+  animation: bg-accent 0.25s forwards;
 }
 
 .container {

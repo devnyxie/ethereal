@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const themes = ["light", "system", "dark"] as const;
 type Theme = (typeof themes)[number];
@@ -58,8 +58,8 @@ const ThemeSwitcher: React.FC = () => {
       key={themeName}
       aria-label={mounted ? `Switch to ${themeName} theme` : undefined}
       className={`
-        flex items-center justify-center p-2 transition-colors bg-background rounded-full
-        ${mounted && theme === themeName ? "bg-accent dark:bg-accent/50" : ""}
+        flex items-center justify-center p-2 rounded-full
+        ${mounted && theme === themeName ? "animation-bg-accent" : ""}
       `}
       onClick={mounted ? () => setTheme(themeName) : undefined}
       role={mounted ? "radio" : undefined}
@@ -71,7 +71,7 @@ const ThemeSwitcher: React.FC = () => {
 
   return (
     <div
-      className="flex rounded-full border p-1 w-max"
+      className="flex rounded-full border p-1 w-max space-x-0.5"
       role={mounted ? "radiogroup" : undefined}
     >
       {themes.map((themeName) => (
