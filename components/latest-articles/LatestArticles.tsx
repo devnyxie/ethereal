@@ -1,14 +1,14 @@
 import React from "react";
-import { getAllPosts, PostData } from "@/lib/api";
-import Link from "next/link";
-import { shortDate } from "@/lib/utils";
-import { LuCalendar, LuClock } from "react-icons/lu";
+import { getAllPosts } from "@/lib/api";
 import ArticleListItem from "../articles/ArticleListItem";
 
 const LatestArticles: React.FC = () => {
   const allArticles = getAllPosts();
   const latestArticles = allArticles
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    )
     .slice(0, 5);
 
   return (

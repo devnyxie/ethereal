@@ -91,6 +91,9 @@ const config = {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
       },
+      backgroundImage: {
+        meta: "radial-gradient(circle at 10% 20%, rgb(253, 193, 104) 0%, rgb(251, 128, 128) 90%)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

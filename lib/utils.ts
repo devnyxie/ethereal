@@ -26,3 +26,13 @@ export function calculateReadTime(text: string) {
   const minutes = Math.ceil(wordCount / wordsPerMinute);
   return `${minutes}min`;
 }
+
+export function extractDomain(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    return parsedUrl.hostname.replace(/^www\./, "");
+  } catch (e) {
+    console.error("Invalid URL:", e);
+    return null;
+  }
+}

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import pfp from "@/public/pfp_demo.jpg";
+import pfp from "@/public/avatar.jpg";
 import ThemeSelector from "@/components/theme/themeSelector";
 import MobileMenu from "./mobile-menu";
 import DesktopMenu from "./desktop-menu";
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
             />
             {/* <span className="dancing-script text-3xl"> Timothee</span> */}
           </Link>
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center">
             <DesktopMenu />
           </div>
           <div className="space-x-4 hidden w-[200px] md:flex justify-end">

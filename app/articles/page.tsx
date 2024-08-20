@@ -1,13 +1,14 @@
-import { getAllPosts, PostData } from "@/lib/api";
+import { getAllPosts } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { LuTags, LuFolder } from "react-icons/lu";
 import ArticleListItem from "@/components/articles/ArticleListItem";
+import { PostData } from "@/lib/types";
 
 const ArticlesByYear = ({ articles }: { articles: PostData[] }) => {
   const groupedArticles = articles.reduce((acc, article) => {
-    const year = new Date(article.date).getFullYear().toString();
+    const year = new Date(article.publishedAt).getFullYear().toString();
     if (!acc[year]) {
       acc[year] = [];
     }

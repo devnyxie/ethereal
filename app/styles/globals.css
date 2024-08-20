@@ -4,6 +4,174 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Fonts === */
+
+/* Geist */
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-UltraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-Black.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/geist/Geist-UltraBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Geist Mono */
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-UltraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-Black.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist-mono/GeistMono-UltraBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Dancing Script */
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("/fonts/dancing-script/DancingScript-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("/fonts/dancing-script/DancingScript-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("/fonts/dancing-script/DancingScript-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("/fonts/dancing-script/DancingScript-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  --font-geist-sans: "Geist", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+  --font-dancing-script: "Dancing Script", cursive;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -70,6 +238,7 @@
 
 body {
   @apply antialiased;
+  font-family: "Geist", sans-serif;
 }
 
 @layer utilities {

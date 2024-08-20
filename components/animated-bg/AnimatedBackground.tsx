@@ -7,11 +7,13 @@ function AnimatedBackground() {
   const size_3 = `h-[600px] w-[500px]`;
   const size_4 = `h-[150px] w-[500px]`;
 
+  const gpuAcceleration = "transform-gpu";
+
   const enableBlur = true;
   const blurClass = `blur-[120px]`;
 
   const enableAnimation = true;
-  const animationClass = `animate-blob`;
+  const animationClass = `${gpuAcceleration} animate-blob`;
 
   const classes = `${enableBlur ? `${blurClass}` : ""} ${
     enableAnimation ? `${animationClass}` : ""

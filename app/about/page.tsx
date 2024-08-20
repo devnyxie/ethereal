@@ -1,5 +1,13 @@
 import GithubCalendar from "@/components/github/githubCalendar";
+import Config from "@/content/config";
 import * as React from "react";
+
+export const metadata = {
+  title: Config.site.title + " | About",
+  description:
+    Config.settings.pages.find((page) => page.path === "/about")
+      ?.meta_description || Config.site.description,
+};
 
 export default function About() {
   const technologies = {

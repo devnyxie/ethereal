@@ -1,20 +1,9 @@
 import fs from "fs";
 import { join } from "path";
 import { calculateReadTime } from "./utils";
+import { PostData } from "./types";
 
-export interface PostData {
-  title: string;
-  excerpt: string; // [!] not used currently
-  coverImage: string; // e.g. "/images/cover.jpg"
-  date: string; // e.g. "2021-08-01"
-  slug: string; // route name
-  readTime: string; // e.g. "5min" (generated in this file)
-  content: string; // markdown content
-  folder?: string; // e.g. "cockpit"
-  tags?: string[]; // e.g. ["linux", "hardware", "reverse engineering"]
-}
-
-const postsDirectory = join(process.cwd(), "_articles");
+const postsDirectory = join(process.cwd(), "content/articles");
 
 function titleToSlug(title: string) {
   return title
@@ -57,7 +46,7 @@ const parseFrontMatter = (
     return acc;
   }, {} as PostData);
 
-  if (!data.title || !data.date) {
+  if (!data.title || !data.publishedAt) {
     throw new Error("Title and date are required in front matter");
   }
 
@@ -97,7 +86,8 @@ export const getAllPosts = (): PostData[] => {
   });
 
   allPosts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
   return allPosts;
 };
