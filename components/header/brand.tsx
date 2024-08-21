@@ -5,7 +5,6 @@ import Image from "next/image";
 import avatar from "@/public/avatar.jpg";
 
 function Brand() {
-  console.log(Config.settings.header.brand.format);
   if (Config.settings.header.brand.format === "text") {
     return (
       <Link

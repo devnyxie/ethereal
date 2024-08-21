@@ -1,4 +1,4 @@
-# ethereal / ayanami
+# ethereal / ayanami / aurora / beta-03
 
 ## Description
 
