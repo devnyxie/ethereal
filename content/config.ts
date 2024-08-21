@@ -5,13 +5,13 @@ const Config: ConfigInterface = {
   site: {
     title: "Tims Personal Garden",
     description: "A fantastic website with great content",
-    url: "http://127.0.0.1:3000",
+    url: "https://ethereal-orpin.vercel.app",
     language: "en",
   },
   user: {
-    name: "crlmgp",
+    name: "Timothee",
     avatar: "/avatar.jpg",
-    role: "Frontend Mew Mew",
+    role: "Full Stack Engineer",
   },
   // sites settings
   settings: {
