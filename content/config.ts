@@ -22,6 +22,12 @@ const Config: ConfigInterface = {
       { title: "Projects", path: "/projects", meta_description: "" },
       { title: "About", path: "/about", meta_description: "" },
     ],
+    header: {
+      brand: {
+        format: "avatar",
+        // text: "devnyxie",
+      },
+    },
     footer: {
       // Footer Social Links
       socialLinks: [

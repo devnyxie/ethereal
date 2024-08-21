@@ -16,7 +16,6 @@ export default function Home() {
       {/* Why 6.5rem? It's because the height of the navbar is 4.5rem and the padding top of the template is 2rem. */}
       <div className="w-full relative flex flex-col items-center justify-center py-[5rem] lg:py-0 lg:h-dvh lg:mt-[-6.5rem]">
         <AnimatedBackground />
-        {/* <SimpleCard_V3 /> */}
         <div className="flex justify-between items-center z-[1]">
           <div className="w-full flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-10">
             <div>
@@ -39,11 +38,7 @@ export default function Home() {
               quality={100}
               fetchPriority="high"
               priority={true}
-              style={{
-                aspectRatio: 1 / 1,
-                objectFit: "cover",
-                borderRadius: "50%",
-              }}
+              className="border rounded-full aspect-square"
             />
           </div>
         </div>

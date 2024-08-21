@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -16,13 +17,9 @@ import links from "./links";
 
 function MobileMenu() {
   const currentPath = usePathname();
-  const [drawerKey, setDrawerKey] = useState(0);
-  useEffect(() => {
-    setDrawerKey((prevKey) => prevKey + 1);
-  }, [currentPath]);
   return (
     <div>
-      <Drawer key={drawerKey} closeThreshold={0}>
+      <Drawer key={currentPath}>
         <DrawerTrigger asChild>
           <Button size="icon" variant="outline" className="rounded-full">
             <HamburgerMenuIcon className="w-5 h-5" />

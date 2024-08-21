@@ -90,6 +90,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
+        cursive: ["var(--font-dancing-script)"],
       },
       backgroundImage: {
         meta: "radial-gradient(circle at 10% 20%, rgb(253, 193, 104) 0%, rgb(251, 128, 128) 90%)",

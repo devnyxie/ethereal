@@ -1,6 +1,7 @@
+import Config from "@/content/config";
 import { getAllPosts } from "@/lib/api";
 
-export const baseUrl = "http://127.0.0.1:3000";
+export const baseUrl = Config.site.url;
 
 export default async function sitemap() {
   let articles = getAllPosts().map((post) => ({
@@ -8,7 +9,7 @@ export default async function sitemap() {
     lastModified: new Date(post.publishedAt).toISOString().split("T")[0],
   }));
 
-  let routes = ["", "/articles", "/projects"].map((route) => ({
+  let routes = ["", "about", "/articles", "/projects"].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split("T")[0],
   }));

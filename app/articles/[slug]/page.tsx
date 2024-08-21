@@ -13,7 +13,6 @@ export async function generateMetadata(
   { params, searchParams }: { params: PostData; searchParams: URLSearchParams },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  console.log(params, searchParams);
   const post = getPostBySlug(params.slug);
 
   return {
@@ -30,7 +29,6 @@ export async function generateStaticParams() {
 }
 
 export default async function Article({ params }: { params: PostData }) {
-  console.log("Article PostData: ", params);
   const { slug } = params;
   if (!slug) {
     notFound();

@@ -16,6 +16,12 @@ export interface ConfigInterface {
       path: string;
       meta_description: string | undefined;
     }[];
+    header: {
+      brand: {
+        format: "text" | "avatar";
+        text?: string;
+      };
+    };
     footer: {
       socialLinks: {
         platform: string;
