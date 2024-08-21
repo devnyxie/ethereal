@@ -6,6 +6,7 @@ import ThemeSelector from "@/components/theme/themeSelector";
 import MobileMenu from "./mobile-menu";
 import DesktopMenu from "./desktop-menu";
 import Brand from "./brand";
+import Config from "@/content/config";
 
 const Header: React.FC = () => {
   return (
@@ -18,9 +19,16 @@ const Header: React.FC = () => {
           <div className="hidden md:flex items-center">
             <DesktopMenu />
           </div>
-          <div className="space-x-4 hidden w-[200px] md:flex justify-end">
-            <ThemeSelector />
-          </div>
+
+          {Config.settings.header.themeSwitcher ? (
+            <>
+              <div className="space-x-4 hidden w-[200px] md:flex justify-end">
+                <ThemeSelector />
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
           <div className="block md:hidden">
             <MobileMenu />
           </div>

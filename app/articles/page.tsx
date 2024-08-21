@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 import { LuTags, LuFolder } from "react-icons/lu";
 import ArticleListItem from "@/components/articles/ArticleListItem";
 import { PostData } from "@/lib/types";
+import Config from "@/content/config";
+
+export const metadata = {
+  title: Config.site.title + " | Articles",
+};
 
 const ArticlesByYear = ({ articles }: { articles: PostData[] }) => {
   const groupedArticles = articles.reduce((acc, article) => {

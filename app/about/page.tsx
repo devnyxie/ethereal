@@ -45,9 +45,6 @@ export default function About() {
         passionate about creating software that is not only functional but also
         beautiful.
       </p>
-      <div className="mt-8 mb-8 flex justify-center">
-        <GithubCalendar />
-      </div>
       <h1 className="mt-8 mb-2">Stack</h1>
       <p>
         Here are some of the technologies I have experience with. I am always

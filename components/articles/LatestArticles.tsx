@@ -1,6 +1,6 @@
 import React from "react";
 import { getAllPosts } from "@/lib/api";
-import ArticleListItem from "../articles/ArticleListItem";
+import ArticleListItem from "./ArticleListItem";
 
 const LatestArticles: React.FC = () => {
   const allArticles = getAllPosts();
@@ -13,7 +13,9 @@ const LatestArticles: React.FC = () => {
 
   return (
     <div className="">
-      <h1 className="mb-7">Latest Articles</h1>
+      <div className="text-2xl md:text-3xl font-medium mb-4">
+        Latest Articles
+      </div>
       <ul>
         {latestArticles.map((article, index) => (
           <ArticleListItem key={index} article={article} />

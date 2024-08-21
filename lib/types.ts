@@ -21,12 +21,14 @@ export interface ConfigInterface {
         format: "text" | "avatar";
         text?: string;
       };
+      themeSwitcher?: boolean;
     };
     footer: {
       socialLinks: {
         platform: string;
         url: string;
       }[];
+      themeSwitcher?: boolean;
     };
   };
 }

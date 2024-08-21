@@ -8,13 +8,6 @@ type Theme = "dark" | "light";
 
 function GithubCalendar() {
   const { resolvedTheme } = useTheme() as { resolvedTheme: Theme };
-  const [data, setData] = React.useState([]);
-
-  // React.useEffect(() => {
-  //   fetch("https://github-contributions-api.jogruber.de/v4/devnyxie?y=last")
-  //     .then((response) => response.json())
-  //     .then((responseData) => setData(responseData.contributions));
-  // }, []);
 
   return (
     <>

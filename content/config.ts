@@ -3,7 +3,7 @@ import { ConfigInterface } from "@/lib/types";
 const Config: ConfigInterface = {
   // metadata
   site: {
-    title: "Tims Personal Garden",
+    title: "Garden",
     description: "A fantastic website with great content",
     url: "https://ethereal-orpin.vercel.app",
     language: "en",
@@ -17,7 +17,7 @@ const Config: ConfigInterface = {
   settings: {
     // Header Navigation Links
     pages: [
-      { title: "Home", path: "/", meta_description: "" },
+      { title: "Home", path: "/", meta_description: "" }, // !!! add invidial page settings: aka homepage
       { title: "Articles", path: "/articles", meta_description: "" },
       { title: "Projects", path: "/projects", meta_description: "" },
       { title: "About", path: "/about", meta_description: "" },
@@ -25,8 +25,8 @@ const Config: ConfigInterface = {
     header: {
       brand: {
         format: "avatar",
-        // text: "devnyxie",
       },
+      themeSwitcher: true,
     },
     footer: {
       // Footer Social Links
