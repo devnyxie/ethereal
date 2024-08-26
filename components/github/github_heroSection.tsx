@@ -26,7 +26,7 @@ const contributions = [
 function GitHeroSection() {
   return (
     <div className="w-full flex flex-col justify-center">
-      <div className="text-2xl md:text-3xl font-medium mb-4">
+      <div className="text-2xl md:text-3xl font-medium mb-1">
         My Open Source Journey
       </div>
       <div className="text-muted-foreground">
