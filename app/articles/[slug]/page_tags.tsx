@@ -25,7 +25,7 @@ export default function PostTags({ tags }: PostTagsProps) {
       <div className="flex flex-wrap gap-1 items-center">
         {showAllTags || tags.length <= 3 ? (
           tags.map((tag, index) => (
-            <BadgeLink text={tag} href={`/articles//tags/${tag}`} key={index} />
+            <BadgeLink text={tag} href={`/articles/tags/${tag}`} key={index} />
           ))
         ) : (
           <>

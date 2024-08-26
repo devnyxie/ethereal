@@ -28,7 +28,11 @@ export default function Tags() {
             <h2 className="text-2xl w-6">{letter}</h2>
             <div className="gap-x-2 gap-y-1 flex items-center w-full h-full flex-wrap">
               {groupedTags[letter].sort().map((tag, index) => (
-                <BadgeLink text={tag} href={`/tags/` + tag} key={index} />
+                <BadgeLink
+                  text={tag}
+                  href={`/articles/tags/` + tag}
+                  key={index}
+                />
               ))}
             </div>
           </div>
