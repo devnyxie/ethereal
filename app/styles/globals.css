@@ -292,6 +292,10 @@ ol:not(header ol) {
     @apply mb-2;
   }
 
+  img {
+    @apply my-3;
+  }
+
   /*<-- markdowns code highlighting -->*/
   /* LIGHT */
   pre {

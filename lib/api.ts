@@ -74,6 +74,26 @@ export const getPostBySlug = (slug: string): PostData => {
   return { ...data, content };
 };
 
+export const getPostsByTag = (tag: string): PostData[] => {
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  const posts = fileNames
+    .map((fileName) => {
+      const filePath = join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      const { data } = parseFrontMatter(fileContents);
+      data.slug = titleToSlug(data.title);
+      return data;
+    })
+    .filter((post) => post.tags?.includes(tag));
+
+  posts.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+  return posts;
+};
+
 export const getAllPosts = (): PostData[] => {
   const fileNames = fs.readdirSync(postsDirectory);
 

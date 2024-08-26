@@ -51,12 +51,12 @@ function ArticlesPage() {
               Tags
             </Button>
           </Link>
-          <Link href="/articles/folders" passHref>
+          {/* <Link href="/articles/folders" passHref>
             <Button variant="outline" size="sm">
               <LuFolder className="mr-2 h-4 w-4" />
               Folders
             </Button>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <ArticlesByYear articles={allArticles} />

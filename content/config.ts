@@ -24,15 +24,15 @@ const Config: ConfigInterface = {
     ],
     header: {
       brand: {
-        format: "avatar",
+        format: "name",
       },
       themeSwitcher: true,
     },
     footer: {
       // Footer Social Links
       socialLinks: [
-        { platform: "Twitter", url: "https://twitter.com/ethereal" },
-        { platform: "GitHub", url: "https://github.com/ethereal" },
+        { platform: "GitHub", url: "https://github.com/devnyxie" },
+        { platform: "LinkedIn", url: "https://linkedin.com/in/talmkg" },
       ],
     },
   },

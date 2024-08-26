@@ -11,7 +11,7 @@ const SplitterArticleListItem = () => (
 );
 
 const ArticleListItem = ({ article }: { article: PostData }) => (
-  <div className="transition-opacity mb-3">
+  <div className="transition-opacity mb-3 w-full">
     <div className="md:flex md:flex-wrap md:justify-between md:items-center">
       <Link
         href={`/articles/${article.slug}`}

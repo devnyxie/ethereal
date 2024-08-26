@@ -18,7 +18,7 @@ export interface ConfigInterface {
     }[];
     header: {
       brand: {
-        format: "text" | "avatar";
+        format: "name" | "avatar";
         text?: string;
       };
       themeSwitcher?: boolean;

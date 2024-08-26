@@ -1,5 +1,6 @@
 import GithubCalendar from "@/components/github/githubCalendar";
 import Config from "@/content/config";
+import Image from "next/image";
 import * as React from "react";
 
 export const metadata = {
@@ -32,6 +33,14 @@ export default function About() {
   };
   return (
     <div>
+      <Image
+        src={Config.user.avatar}
+        alt="avatar"
+        width={250}
+        height={250}
+        quality={100}
+        className="mx-auto rounded-full"
+      />
       <h1 className="mb-2">About</h1>
       <p>
         My name is Timothee and I am a Full Stack Software Developer with a

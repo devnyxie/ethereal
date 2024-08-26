@@ -5,13 +5,13 @@ import Image from "next/image";
 import avatar from "@/public/avatar.jpg";
 
 function Brand() {
-  if (Config.settings.header.brand.format === "text") {
+  if (Config.settings.header.brand.format === "name") {
     return (
       <Link
         href="/"
         className="flex items-center space-x-2 w-[200px] font-cursive text-2xl"
       >
-        {Config.settings.header.brand.text}
+        {Config.user.name}
       </Link>
     );
   } else if (Config.settings.header.brand.format === "avatar") {
