@@ -87,8 +87,8 @@ body {
   height: 170px;
   background: radial-gradient(
     ellipse at bottom,
-    rgba(255, 204, 255, 1) 0%,
-    rgba(255, 204, 255, 0.8) 30%,
+    rgba(255, 204, 255, 0.8) 0%,
+    rgba(255, 204, 255, 0.5) 30%,
     rgba(255, 255, 255, 0) 70%
   );
   pointer-events: none;

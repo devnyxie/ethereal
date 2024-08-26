@@ -103,7 +103,7 @@ function ProjectItem({
   return (
     <>
       <div className=" h-[480px] group mx-auto dark:bg-accent/20 p-2 bg-white border overflow-hidden rounded-md dark:text-white text-black ">
-        <figure className="w-full h-80 group-hover:h-72 transition-all duration-300 dark:bg-[#0a121a] bg-[#f0f5fa] p-2 rounded-md relative overflow-hidden">
+        <figure className="w-full h-80 group-hover:h-72 transition-all duration-300 dark:bg-accent/20 bg-[#f0f5fa] p-2 rounded-md relative overflow-hidden">
           <div
             style={{
               background:
