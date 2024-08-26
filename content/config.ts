@@ -5,7 +5,7 @@ const Config: ConfigInterface = {
   site: {
     title: "Garden",
     description: "A fantastic website with great content",
-    url: "https://ethereal-orpin.vercel.app",
+    url: "https://www.devnyxie.me",
     language: "en",
   },
   user: {
