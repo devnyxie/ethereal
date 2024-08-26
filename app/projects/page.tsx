@@ -8,6 +8,9 @@ import { LuChevronRight } from "react-icons/lu";
 import { LuHeart } from "react-icons/lu";
 import { LuExternalLink } from "react-icons/lu";
 import Link from "next/link";
+import fs from "fs/promises";
+import { getPlaiceholder } from "plaiceholder";
+import path, { join } from "path";
 
 export const metadata = {
   title: Config.site.title + " | Projects",
@@ -61,27 +64,42 @@ const projects: Project[] = [
     image: "/projects/devlink.png",
   },
 ];
-export default function Projects() {
+export default async function Projects() {
   return (
     <>
       <div className="mb-8">
-        {" "}
         <h1 className="mb-1">Projects</h1>
         <p className="text-muted-foreground">Projects worth mentioning</p>
       </div>
-
-      {/* <StripeCard /> */}
-
       <div className="space-y-4 md:space-y-0 md:grid md:grid-rows-2 md:grid-cols-2 md:gap-4">
-        {projects.map((project) => (
-          <ProjectItem key={project.title} project={project} />
-        ))}
+        {projects.map(async (project) => {
+          let localBase64 = "";
+          if (project.image) {
+            const src = "public" + project.image;
+            const buffer = await fs.readFile(join(process.cwd(), src));
+            const { base64 } = await getPlaiceholder(buffer);
+            localBase64 = base64;
+          }
+          return (
+            <ProjectItem
+              key={project.title}
+              project={project}
+              base64={localBase64}
+            />
+          );
+        })}
       </div>
     </>
   );
 }
 
-function ProjectItem({ project }: { project: Project }) {
+function ProjectItem({
+  project,
+  base64,
+}: {
+  project: Project;
+  base64: string;
+}) {
   return (
     <>
       <div className=" h-[480px] group mx-auto dark:bg-accent/20 p-2 bg-white border overflow-hidden rounded-md dark:text-white text-black ">
@@ -99,6 +117,8 @@ function ProjectItem({ project }: { project: Project }) {
               alt="shoes"
               width={600}
               height={600}
+              placeholder="blur"
+              blurDataURL={base64}
               className="absolute -bottom-1 group-hover:-bottom-5 right-0 h-64 w-[80%] group-hover:border-4 border-4 group-hover:border-[#76aaf82d] rounded-lg object-cover object-top group-hover:object-center transition-all duration-300"
             />
           )}
