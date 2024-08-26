@@ -3,7 +3,7 @@ import { ConfigInterface } from "@/lib/types";
 const Config: ConfigInterface = {
   // metadata
   site: {
-    title: "Garden",
+    title: "Tim",
     description: "A fantastic website with great content",
     url: "https://www.devnyxie.me",
     language: "en",
