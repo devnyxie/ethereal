@@ -28,7 +28,7 @@ export default function Home() {
             <div>
               <div className={`text-2xl md:text-3xl`}>
                 {"Hey! My name is "}
-                <span className={`dancing-script text-4xl md:text-4xl`}>
+                <span className={`font-cursive text-4xl md:text-4xl`}>
                   {Config.user.name}
                 </span>
               </div>
