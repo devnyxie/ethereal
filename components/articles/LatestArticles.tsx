@@ -13,9 +13,7 @@ const LatestArticles: React.FC = () => {
 
   return (
     <div className="">
-      <div className="text-2xl md:text-3xl font-medium mb-4">
-        Latest Articles
-      </div>
+      <h2 className="mb-2">Latest Articles</h2>
       <ul>
         {latestArticles.map((article, index) => (
           <ArticleListItem key={index} article={article} />

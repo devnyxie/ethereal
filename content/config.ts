@@ -15,26 +15,28 @@ const Config: ConfigInterface = {
   },
   // sites settings
   settings: {
+    grain: false,
+    gradient: true,
     // Header Navigation Links
     pages: [
-      { title: "Home", path: "/", meta_description: "" }, // !!! add invidial page settings: aka homepage
+      //to be reworked
+      { title: "Home", path: "/", meta_description: "" }, // TODO: add invidial page descriptions and settings
       { title: "Articles", path: "/articles", meta_description: "" },
       { title: "Projects", path: "/projects", meta_description: "" },
       { title: "About", path: "/about", meta_description: "" },
     ],
     header: {
       brand: {
-        format: "name",
+        format: "name", // 'name' or 'avatar'
       },
+      fixed: false,
       themeSwitcher: true,
     },
-    footer: {
-      // Footer Social Links
-      socialLinks: [
-        { platform: "GitHub", url: "https://github.com/devnyxie" },
-        { platform: "LinkedIn", url: "https://linkedin.com/in/talmkg" },
-      ],
-    },
+    footer: {},
+    socialLinks: [
+      { name: "GitHub", url: "https://github.com/devnyxie" },
+      { name: "LinkedIn", url: "https://linkedin.com/in/talmkg" },
+    ],
   },
 };
 

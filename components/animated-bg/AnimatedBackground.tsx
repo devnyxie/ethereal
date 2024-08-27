@@ -1,3 +1,4 @@
+import Config from "@/content/config";
 import React from "react";
 
 function AnimatedBackground() {
@@ -112,16 +113,20 @@ function AnimatedBackground() {
     </>
   );
 
-  const test = <></>;
-
   // summary / thoughts
   // 1. Light: "three" (Twilight) is the most visually appealing version for the light version. We can even use similar colors for the footer.
   // 2. Dark: "violet_blue_dark" Blue and Violet are the most visually appealing colors.
 
   return (
     <>
-      <div className="hidden dark:block">{violet_blue_dark}</div>
-      <div className="block dark:hidden">{three}</div>
+      {Config.settings.gradient ? (
+        <>
+          <div className="hidden dark:block">{violet_blue_dark}</div>
+          <div className="block dark:hidden">{three}</div>
+        </>
+      ) : (
+        <> </>
+      )}
     </>
   );
 }

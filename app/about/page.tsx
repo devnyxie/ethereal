@@ -2,6 +2,8 @@ import GithubCalendar from "@/components/github/githubCalendar";
 import Config from "@/content/config";
 import Image from "next/image";
 import * as React from "react";
+import EducationTree from "./eduTree";
+import WorkTree from "./workTree";
 
 export const metadata = {
   title: Config.site.title + " | About",
@@ -31,30 +33,55 @@ export default function About() {
       databases: ["PostgreSQL", "MySQL", "MongoDB"],
     },
   };
+
+  const education = [
+    {
+      name: "42Warsaw",
+      location: "Warsaw, Poland",
+      degree: "RNCP Level 7 - Computer Science",
+      date: "2024 - 2028",
+    },
+    {
+      name: "Epicode Bootcamp",
+      degree: "MERN Full Stack Developer",
+      date: "2022-2023",
+    },
+    {
+      name: "2nd High School of Thessaloniki, Greece",
+      degree: "Computer Science",
+      date: "2019-2022",
+    },
+  ];
+
   return (
     <div>
       <Image
-        src={Config.user.avatar}
+        src="/peep_about.svg"
         alt="avatar"
-        width={250}
-        height={250}
+        width={300}
+        height={300}
         quality={100}
-        className="mx-auto rounded-full"
+        className="mx-auto rounded-full svg-border"
       />
-      <h1 className="mb-2">About</h1>
-      <p>
-        My name is Timothee and I am a Full Stack Software Developer with a
-        passion for open-source. I dedicate my free time in learning, building
-        projects and contributing to well-known open-source projects like
-        Next.js and Material UI.
-      </p>
-      <h1 className="mt-8 mb-2">Passion</h1>
-      <p>
-        I can not find a better word to describe my love for what I do. I am
-        passionate about creating software that is not only functional but also
-        beautiful.
-      </p>
-      <h1 className="mt-8 mb-2">Stack</h1>
+      <div className="">
+        <h1 className="mb-2">About</h1>
+        <p>
+          My name is Timothee and I am a Full Stack Software Developer with a
+          passion for open-source. I dedicate my free time in learning, building
+          projects and contributing to well-known open-source projects like
+          Next.js and Material UI.
+        </p>
+      </div>
+
+      <div>
+        <h1 className="mt-12 mb-2">Education</h1>
+        <EducationTree />
+      </div>
+      <div>
+        <h1 className="mt-12 mb-2">Work</h1>
+        <WorkTree />
+      </div>
+      <h1 className="mt-12 mb-2">Skills</h1>
       <p>
         Here are some of the technologies I have experience with. I am always
         looking to learn new technologies and improve my skills.

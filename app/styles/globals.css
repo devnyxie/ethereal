@@ -181,11 +181,11 @@ html {
     --popover-foreground: 240 10% 3.9%;
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 240 4.8% 90.9%;
     --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
+    --muted: 240 4.8% 90.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
+    --accent: 240 4.8% 90.9%;
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -232,6 +232,25 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-2xl md:text-3xl font-bold text-accent-foreground/90;
+  }
+  h2 {
+    @apply text-xl md:text-2xl font-semibold text-accent-foreground/90;
+  }
+  h3 {
+    @apply text-lg md:text-xl font-medium text-accent-foreground/90;
+  }
+  h4 {
+    @apply text-base md:text-lg text-accent-foreground/90;
+  }
+  h5,
+  h6 {
+    @apply text-accent-foreground/90;
+  }
+  p {
+    @apply text-accent-foreground/90;
   }
 }
 
@@ -335,19 +354,6 @@ ol:not(header ol) {
   }
 }
 
-h1 {
-  @apply text-3xl;
-}
-h2 {
-  @apply text-2xl;
-}
-h3 {
-  @apply text-xl;
-}
-h4 {
-  @apply text-lg;
-}
-
 /* Markdowns Dark Mode Styling */
 html.dark,
 html.dark-theme .markdown {
@@ -406,4 +412,17 @@ html.dark-theme .markdown {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+.mirror {
+  transform: scaleX(-1);
+}
+
+.svg-border {
+  filter: none;
+}
+
+html.dark .svg-border {
+  filter: drop-shadow(1px 0 0 antiquewhite) drop-shadow(-1px 0 0 antiquewhite)
+    drop-shadow(0 1px 0 antiquewhite) drop-shadow(0 -1px 0 antiquewhite);
 }
