@@ -15,7 +15,7 @@ const Config: ConfigInterface = {
   },
   // sites settings
   settings: {
-    grain: true,
+    grain: false,
     gradient: true,
     // Header Navigation Links
     pages: [

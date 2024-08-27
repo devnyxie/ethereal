@@ -72,13 +72,14 @@ export default function About() {
           Next.js and Material UI.
         </p>
       </div>
-      <div>
-        <h1 className="mt-12 mb-2">Work</h1>
-        <WorkTree />
-      </div>
+
       <div>
         <h1 className="mt-12 mb-2">Education</h1>
         <EducationTree />
+      </div>
+      <div>
+        <h1 className="mt-12 mb-2">Work</h1>
+        <WorkTree />
       </div>
       <h1 className="mt-12 mb-2">Skills</h1>
       <p>

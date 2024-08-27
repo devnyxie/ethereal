@@ -17,9 +17,9 @@ const ArticleListItem = ({ article }: { article: PostData }) => (
         href={`/articles/${article.slug}`}
         className="text-base font-normal opacity-75 hover:opacity-100 duration-150"
       >
-        <p className="truncate overflow-hidden max-w-[100%] md:max-w-[500px] lg:max-w-[700px]">
+        <div className="truncate overflow-hidden max-w-[100%] md:max-w-[500px] lg:max-w-[700px]">
           {article.title}
-        </p>
+        </div>
       </Link>
       <SplitterArticleListItem />
       <div className="flex items-center opacity-50 space-x-3 mt-1 md:mt-0">

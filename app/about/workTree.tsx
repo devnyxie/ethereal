@@ -24,12 +24,12 @@ const WorkTree = () => {
             <div
               className={`absolute left-0 top-0 h-[calc(100%+40px)] w-px  ${
                 index == workHistory.length - 1
-                  ? "bg-gradient-to-b from-accent to-transparent"
-                  : "bg-accent"
+                  ? "bg-gradient-to-b from-accent-foreground/50 to-transparent"
+                  : "bg-accent-foreground/50"
               }`}
             ></div>
             <div
-              className="absolute left-0 top-2 w-4 h-4 rounded-full bg-background border"
+              className="absolute left-0 top-2 w-4 h-4 rounded-full bg-background border border-accent-foreground/50"
               style={{ transform: "translate(-50%, -50%)" }}
             ></div>
             <div className="">
