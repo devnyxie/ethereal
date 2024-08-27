@@ -114,7 +114,8 @@ function ProjectItem({
           {project.image && (
             <Image
               src={project.image}
-              alt="shoes"
+              alt="project image"
+              quality={100}
               width={600}
               height={600}
               placeholder="blur"

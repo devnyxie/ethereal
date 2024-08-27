@@ -3,7 +3,7 @@ import { ThemeProvider } from "../components/theme/theme-provider";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import "./styles/globals.css";
-import "./styles/scrollbar.css";
+import "./styles/grain.css";
 import Config from "@/content/config";
 
 export const metadata = {
@@ -33,14 +33,18 @@ export default function RootLayout({
           href="/favicons/icon.png"
         />
       </head>
-      <body className="noisy-div">
+      <body className={Config.settings.grain ? "grain" : ""}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex flex-col min-h-screen pt-[4.5rem] ">
+          <div
+            className={`relative flex flex-col min-h-screen ${
+              Config.settings.header.fixed ? "pt-[4.5rem]" : ""
+            }`}
+          >
             <Header />
             {children}
             <Footer />

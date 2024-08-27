@@ -36,3 +36,16 @@ export function extractDomain(url: string) {
     return null;
   }
 }
+
+export function getDomainLabel(urlString: string) {
+  try {
+    const url = new URL(urlString);
+    const domainParts = url.hostname.split(".");
+    // Assume the domain label you want is the second-to-last part
+    return domainParts.length > 2
+      ? domainParts[domainParts.length - 2]
+      : domainParts[0];
+  } catch (error) {
+    return "Unknown";
+  }
+}

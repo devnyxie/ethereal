@@ -71,7 +71,7 @@ const ThemeSwitcher: React.FC = () => {
 
   return (
     <div
-      className="flex rounded-full border p-1 w-max space-x-0.5"
+      className="flex items-center rounded-full border w-max p-1 space-x-0.5"
       role={mounted ? "radiogroup" : undefined}
     >
       {themes.map((themeName) => (

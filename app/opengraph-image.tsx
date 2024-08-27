@@ -1,4 +1,5 @@
 import DefaultBanner from "@/lib/og/default_banner";
+import { headers } from "next/headers";
 
 export const runtime = "edge";
 

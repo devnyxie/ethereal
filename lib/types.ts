@@ -11,6 +11,8 @@ export interface ConfigInterface {
     role: string;
   };
   settings: {
+    grain: boolean;
+    gradient: boolean;
     pages: {
       title: string;
       path: string;
@@ -21,15 +23,16 @@ export interface ConfigInterface {
         format: "name" | "avatar";
         text?: string;
       };
+      fixed: boolean;
       themeSwitcher?: boolean;
     };
     footer: {
-      socialLinks: {
-        platform: string;
-        url: string;
-      }[];
       themeSwitcher?: boolean;
     };
+    socialLinks: {
+      name?: string;
+      url: string;
+    }[];
   };
 }
 

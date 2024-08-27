@@ -26,15 +26,13 @@ const contributions = [
 function GitHeroSection() {
   return (
     <div className="w-full flex flex-col justify-center">
-      <div className="text-2xl md:text-3xl font-medium mb-1">
-        My Open Source Journey
-      </div>
-      <div className="text-muted-foreground">
-        Witness my commitment to open source. Each green square represents a day
-        of contribution, a step towards better software for everyone.
+      <h2 className="mb-1">My Open Source Journey</h2>
+      <div className="text-muted-foreground mb-2">
+        Each green square represents a day of contribution, a step towards
+        better software for everyone.
       </div>
 
-      <div className="flex items-center overflow-hidden mt-2 mb-4">
+      <div className="items-center overflow-x-auto mb-4 hidden md:flex">
         {contributions.map((contribution) => (
           <a target="_blank" href={contribution.url} key={contribution.name}>
             <Button
