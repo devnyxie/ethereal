@@ -1,8 +1,8 @@
 ---
-title: RVM: "Solution to "__rvm_make -j8/j12" error"
-publishedAt: "2024-01-09"
-tags: "linux", "ruby"
-summary: "Learn how to fix the j8/j12 error while installing Ruby via RVM on Linux systems."
+title: RVM:"Solution to "__rvm_make -j8/j12" error"
+publishedAt: 2024-01-09
+tags: linux", "ruby
+summary: Learn how to fix the j8/j12 error while installing Ruby via RVM on Linux systems.
 ---
 
 <img src="https://i.imgur.com/htR5R62.png" width="800px"/>
