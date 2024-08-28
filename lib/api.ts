@@ -34,14 +34,11 @@ const parseFrontMatter = (
       acc[trimmedKey] = value
         .join(":")
         .trim()
-        .replace(/^\[|\]$/g, "") // Remove square brackets if they exist
+        .replace(/^\[|\]$/g, "")
         .split(",")
-        .map((tag) => tag.trim().replace(/^"(.*)"$/, "$1")); // Remove quotes if they exist
+        .map((tag) => tag.trim());
     } else {
-      acc[trimmedKey] = value
-        .join(":")
-        .trim()
-        .replace(/^"(.*)"$/, "$1");
+      acc[trimmedKey] = value.join(":").trim(); 
     }
     return acc;
   }, {} as PostData);
