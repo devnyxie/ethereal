@@ -1,8 +1,8 @@
 ---
-title: "Alacritty Customization | Padding, font and Neofetch"
-publishedAt: "2023-12-29"
-tags: "linux", "customization", "terminal"
-summary: "Learn how to customize Alacritty terminal with padding, font, and Neofetch output on launch."
+title: Alacritty Customization | Padding, font and Neofetch
+publishedAt: 2023-12-29
+tags: linux, customization, terminal
+summary: Learn how to customize Alacritty terminal with padding, font, and Neofetch output on launch.
 ---
 
 <img src="https://i.imgur.com/xir0IXC.png" width="100%" />
