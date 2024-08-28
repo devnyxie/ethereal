@@ -31,14 +31,17 @@ const parseFrontMatter = (
     const [key, ...value] = line.split(":");
     const trimmedKey = key.trim() as keyof PostData;
     if (trimmedKey === "tags") {
+    acc[trimmedKey] = value
+      .join(":")
+      .trim()
+      .replace(/^\[|\]$/g, "") // Remove square brackets if they exist
+      .split(",")
+      .map((tag) => tag.trim().replace(/^["'](.*)["']$/, "$1")); // Remove quotes (both " and ') if they exist
+    } else {
       acc[trimmedKey] = value
         .join(":")
         .trim()
-        .replace(/^\[|\]$/g, "")
-        .split(",")
-        .map((tag) => tag.trim());
-    } else {
-      acc[trimmedKey] = value.join(":").trim(); 
+        .replace(/^["'](.*)["']$/, "$1"); // Remove quotes (both " and ') if they exist
     }
     return acc;
   }, {} as PostData);
