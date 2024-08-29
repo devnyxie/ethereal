@@ -34,25 +34,6 @@ export default function About() {
     },
   };
 
-  const education = [
-    {
-      name: "42Warsaw",
-      location: "Warsaw, Poland",
-      degree: "RNCP Level 7 - Computer Science",
-      date: "2024 - 2028",
-    },
-    {
-      name: "Epicode Bootcamp",
-      degree: "MERN Full Stack Developer",
-      date: "2022-2023",
-    },
-    {
-      name: "2nd High School of Thessaloniki, Greece",
-      degree: "Computer Science",
-      date: "2019-2022",
-    },
-  ];
-
   return (
     <div>
       <Image
@@ -72,14 +53,13 @@ export default function About() {
           Next.js and Material UI.
         </p>
       </div>
-
-      <div>
-        <h1 className="mt-12 mb-2">Education</h1>
-        <EducationTree />
-      </div>
       <div>
         <h1 className="mt-12 mb-2">Work</h1>
         <WorkTree />
+      </div>
+      <div>
+        <h1 className="mt-12 mb-2">Education</h1>
+        <EducationTree />
       </div>
       <h1 className="mt-12 mb-2">Skills</h1>
       <p>
