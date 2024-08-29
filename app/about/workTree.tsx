@@ -3,6 +3,12 @@ import React from "react";
 const WorkTree = () => {
   const workHistory = [
     {
+      name: "Freelance",
+      location: "Remote",
+      position: "Software Engineer",
+      date: "2024 - Present",
+    },
+    {
       name: "DemandSphere",
       location: "Tokyo, Japan",
       position: "Full Stack Developer",

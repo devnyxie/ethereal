@@ -6,7 +6,7 @@ const EducationTree = () => {
       name: "42Warsaw",
       location: "Warsaw, Poland",
       degree: "RNCP Level 7 - Computer Science",
-      date: "2024 - 2028",
+      date: "2024 - Present",
     },
     {
       name: "Epicode Bootcamp",
