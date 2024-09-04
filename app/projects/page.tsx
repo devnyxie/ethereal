@@ -33,11 +33,11 @@ const stateColors = {
 
 const projects: Project[] = [
   {
-    title: "aurora",
+    title: "ethereal",
     description:
-      "Aurora is a stunning website template that you can use for free. It features many advanced components and a beautiful design.",
-    state: "development",
-    image: "/projects/aurora.png",
+      "Ethereal is a stunning website template that you can use for free. It features many advanced components and a beautiful design.",
+    state: "published",
+    image: "/projects/ethereal.png",
   },
   {
     title: "katsuragi",
@@ -50,10 +50,24 @@ const projects: Project[] = [
   {
     title: "nigiri",
     description:
-      " The Nigiri Next.js Blog template allows you to create a personalized blog with ease. ",
+      "The Nigiri Next.js Blog template allows you to create a personalized blog with ease. ",
     state: "published",
     git_url: "https://github.com/devnyxie/nigiri",
     image: "/projects/nigiri.png",
+  },
+  {
+    title: "Distro API",
+    description: "When Distrowatch lacked an API, I stepped in to fill the gap. Data for moreover than 900 Linux distributions.",
+    state: "archived",
+    git_url: "https://github.com/devnyxie/distro-api/",
+    image: "/projects/distro-api.png",
+  },
+  {
+    title: "Sci-Fi Solar Map",
+    description: "Abandoned Sci-Fi game. The Solar Map works though! 🔭",
+    state: "archived",
+    git_url: "https://solar-game-map.vercel.app",
+    image: "/projects/solar-map.png",
   },
   {
     title: "dev-link",
@@ -102,7 +116,7 @@ function ProjectItem({
 }) {
   return (
     <>
-      <div className=" h-[480px] group mx-auto dark:bg-accent/20 p-2 bg-white border overflow-hidden rounded-md dark:text-white text-black ">
+      <div className="w-full h-[480px] group mx-auto dark:bg-accent/20 p-2 bg-white border overflow-hidden rounded-md dark:text-white text-black ">
         <figure className="w-full h-80 group-hover:h-72 transition-all duration-300 dark:bg-accent/20 bg-[#f0f5fa] p-2 rounded-md relative overflow-hidden">
           <div
             style={{
