@@ -1,5 +1,6 @@
 import { ConfigInterface } from "@/lib/types";
 
+
 const Config: ConfigInterface = {
   // metadata
   site: {
