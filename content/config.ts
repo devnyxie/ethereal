@@ -6,7 +6,7 @@ const Config: ConfigInterface = {
   site: {
     title: "Tim",
     description: "A fantastic website with great content",
-    url: "https://www.devnyxie.me",
+    url: "https://www.devnyxie.com",
     language: "en",
   },
   user: {
