@@ -7,6 +7,11 @@ const links = [
     icon: LuHome,
   },
   {
+    title: "Notes",
+    href: "https://notes.devnyxie.com",
+    icon: LuBook,
+  },
+  {
     title: "Articles",
     href: "/articles",
     icon: LuBook,
