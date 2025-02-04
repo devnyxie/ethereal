@@ -35,9 +35,10 @@ const projects: Project[] = [
   {
     title: "ethereal",
     description:
-      "Ethereal is a stunning website template that you can use for free. It features many advanced components and a beautiful design.",
+      "Ethereal is a stunning website template that you can use for free. It features many advanced components and a beautiful design. Built using Next.js and Tailwind CSS.",
     state: "published",
     image: "/projects/ethereal.png",
+    git_url: "https://github.com/devnyxie/ethereal",
   },
   {
     title: "katsuragi",
@@ -48,35 +49,36 @@ const projects: Project[] = [
     image: "/projects/katsuragi.png",
   },
   {
+    title: "dev-link",
+    description:
+      "A Web Application designed to help programmers find teams for collaborative projects and learning opportunities. Built with React, Express, and PostgreSQL.",
+    state: "development",
+    git_url: "https://github.com/devnyxie/dev-link",
+    image: "/projects/devlink.png",
+  },
+  {
     title: "nigiri",
     description:
-      "The Nigiri Next.js Blog template allows you to create a personalized blog with ease. ",
+      "The Nigiri Next.js Blog template allows you to create a personalized blog with ease.",
     state: "published",
     git_url: "https://github.com/devnyxie/nigiri",
     image: "/projects/nigiri.png",
   },
   {
     title: "Distro API",
-    description: "When Distrowatch lacked an API, I stepped in to fill the gap. Data for moreover than 900 Linux distributions.",
+    description: "When Distrowatch lacked an API, I stepped in to fill the gap. Data for moreover than 900 Linux distributions. Written in JavaScript." ,
     state: "archived",
     git_url: "https://github.com/devnyxie/distro-api/",
     image: "/projects/distro-api.png",
   },
   {
     title: "Sci-Fi Solar Map",
-    description: "Abandoned Sci-Fi game. The Solar Map works though! 🔭",
+    description: "Abandoned Sci-Fi game. The Solar Map works and looks good though! Built with React.",
     state: "archived",
     git_url: "https://solar-game-map.vercel.app",
     image: "/projects/solar-map.png",
   },
-  {
-    title: "dev-link",
-    description:
-      "A Web Application designed to help programmers find teams for collaborative projects and learning opportunities.",
-    state: "archived",
-    git_url: "https://github.com/devnyxie/dev-link",
-    image: "/projects/devlink.png",
-  },
+
 ];
 export default async function Projects() {
   return (
@@ -157,13 +159,13 @@ function ProjectItem({
               <a href={project.git_url} target="_blank">
                 <Button size="default" variant="outline">
                   <LuGithub className="mr-2 h-4 w-4" />
-                  <span>Repo</span>
+                  <span>Source</span>
                 </Button>
               </a>
             ) : (
               <Button size="default" variant="outline" disabled>
                 <LuGithub className="mr-2 h-4 w-4" />
-                <span>Private Repo</span>
+                <span>Private Source</span>
               </Button>
             )}
           </div>
