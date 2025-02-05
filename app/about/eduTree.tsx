@@ -9,6 +9,12 @@ const EducationTree = () => {
       date: "2024 - Present",
     },
     {
+      name: "Polish-Japanese Academy of Information Technology (PJAIT)",
+      location: "Warsaw, Poland",
+      degree: "Bachelor's Degree - Computer Science",
+      date: "2022 - 2024",
+    },
+    {
       name: "Epicode Bootcamp",
       degree: "MERN Full Stack Developer",
       date: "2022-2023",
