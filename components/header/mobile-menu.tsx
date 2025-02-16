@@ -34,7 +34,7 @@ function MobileMenu() {
             {links.map((link, index) => {
               const Icon = link.icon;
               return (
-                <Link href={link.href} key={index}>
+                <Link href={link.href} key={index} prefetch={false}>
                   <Button
                     className="w-full text-left flex justify-start items-center"
                     variant="ghost"

@@ -22,7 +22,7 @@ function DesktopMenu() {
           if (link.href === "/") return;
           return (
             <NavigationMenuItem key={index}>
-              <Link href={link.href} legacyBehavior passHref>
+              <Link href={link.href} legacyBehavior passHref prefetch={false}>
                 <NavigationMenuLink
                   className={`${navigationMenuTriggerStyle()} duration-200 bg-transparent`}
                   active={currentPath === link.href}
