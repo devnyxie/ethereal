@@ -6,7 +6,7 @@ export const baseUrl = Config.site.url;
 export default async function sitemap() {
   let articles = getAllPosts().map((post) => ({
     url: `${baseUrl}/articles/${post.slug}`,
-    lastModified: new Date(post.publishedAt).toISOString().split("T")[0],
+    lastModified: new Date(post.date).toISOString().split("T")[0],
   }));
 
   let routes = ["", "/about", "/articles", "/projects"].map((route) => ({

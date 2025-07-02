@@ -5,10 +5,7 @@ import ArticleListItem from "./ArticleListItem";
 const LatestArticles: React.FC = () => {
   const allArticles = getAllPosts();
   const latestArticles = allArticles
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    )
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 5);
 
   return (

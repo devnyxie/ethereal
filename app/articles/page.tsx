@@ -13,7 +13,7 @@ export const metadata = {
 
 const ArticlesByYear = ({ articles }: { articles: PostData[] }) => {
   const groupedArticles = articles.reduce((acc, article) => {
-    const year = new Date(article.publishedAt).getFullYear().toString();
+    const year = new Date(article.date).getFullYear().toString();
     if (!acc[year]) {
       acc[year] = [];
     }
