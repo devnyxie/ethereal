@@ -1,8 +1,11 @@
 ---
 title: Alacritty Customization | Padding, font and Neofetch
-publishedAt: 2023-12-29
-tags: linux, customization, terminal
-summary: Learn how to customize Alacritty terminal with padding, font, and Neofetch output on launch.
+date: 2023-12-29
+tags:
+  - linux
+  - customization
+  - terminal
+description: Learn how to customize Alacritty terminal with padding, font, and Neofetch output on launch.
 ---
 
 <img src="https://i.imgur.com/xir0IXC.png" width="100%" />
@@ -104,7 +107,7 @@ window:
 
 # Neofetch
 
-Here we will configure Neofetch. If you don't know what it is, let me explain in short: _Neofetch is a command-line tool that shows a visually appealing summary of your system's key information, like OS, kernel, CPU, GPU, and memory, with a colorful ASCII_.
+Here we will configure Neofetch. If you don't know what it is, let me explain in short: _Neofetch is a command-line tool that shows a visually appealing description of your system's key information, like OS, kernel, CPU, GPU, and memory, with a colorful ASCII_.
 
 <img width="700px" src="https://i.imgur.com/lY0zB6O.png" />
 

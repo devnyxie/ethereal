@@ -17,7 +17,7 @@ export async function generateMetadata(
 
   return {
     title: post.title,
-    description: post.summary ? post.summary : "",
+    description: post.description ? post.description : "",
   };
 }
 
@@ -43,7 +43,7 @@ export default async function Article({ params }: { params: PostData }) {
     <article className="flex flex-col">
       <div className="mb-4">
         <h1>{post.title}</h1>
-        <p className="opacity-65">{longDate(post.publishedAt)}</p>
+        <p className="opacity-65">{longDate(post.date)}</p>
         <PostTags tags={post.tags || []} />
         {post.folder && (
           <div className="flex items-center">

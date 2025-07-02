@@ -1,8 +1,9 @@
 ---
 title: Optimizing Linux System Performance for Hardware Acceleration
-publishedAt: 2024-07-21
-tags: linux, hardware, performance, acceleration
-summary: Learn how to optimize Linux systems for hardware acceleration, covering configurations for CPUs, GPUs...
+date: 2024-07-21
+tags:
+  - unix
+description: Learn how to optimize Linux systems for hardware acceleration, covering configurations for CPUs, GPUs...
 ---
 
 # Introduction

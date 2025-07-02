@@ -25,7 +25,7 @@ const ArticleListItem = ({ article }: { article: PostData }) => (
       <div className="flex items-center opacity-50 space-x-3 mt-1 md:mt-0">
         <div className="flex items-center opacity-75">
           <LuCalendar className="h-4 w-4 mr-1" />
-          <span className="text-sm">{shortDate(article.publishedAt)}</span>
+          <span className="text-sm">{shortDate(article.date)}</span>
         </div>
         <div className="flex items-center opacity-75">
           <LuClock className="h-4 w-4 mr-1" />
