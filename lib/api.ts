@@ -39,9 +39,22 @@ const parseFile = (content: string): PostData => {
   return parsedResult;
 };
 
-export const getPostBySlug = (slug: string): PostData | undefined => {
+export const getPostBySlug = (slug: string): PostData => {
   let post = getAllPosts().find((post) => post.slug === slug);
-  return post;
+  return (
+    post ||
+    ({
+      title: "",
+      date: "",
+      tags: [],
+      folder: "",
+      image: "",
+      description: "",
+      readTime: "",
+      slug: "",
+      content: "",
+    } as PostData)
+  );
 };
 
 export const getPostsByTag = (tag: string): PostData[] => {
